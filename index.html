@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Logo Overlay</title>
 
 <style>
@@ -16,11 +17,27 @@ body{
     background:transparent;
 }
 
+/* Logo */
 .logo{
     position:fixed;
-    top:20px;
-    left:20px;
+
+    /* Posisi kiri atas yang responsif */
+    top:max(20px, 2vw);
+    left:max(20px, 2vw);
+
+    /* Ukuran responsif */
+    width:clamp(80px, 6vw, 140px);
+    height:auto;
+
+    /* Transparansi */
     opacity:0.5;
+
+    /* Supaya tidak mengganggu klik */
+    pointer-events:none;
+    user-select:none;
+
+    /* Selalu berada di atas */
+    z-index:9999;
 }
 </style>
 
