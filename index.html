@@ -29,15 +29,34 @@ body{
     width:clamp(80px, 6vw, 140px);
     height:auto;
 
-    /* Transparansi */
-    opacity:0.5;
-
     /* Supaya tidak mengganggu klik */
     pointer-events:none;
     user-select:none;
 
     /* Selalu berada di atas */
     z-index:9999;
+
+    /* Terapkan Animasi (Total durasi: 60s + 15s = 75s) */
+    animation: loopFade 75s infinite ease-in-out;
+}
+
+/* Keyframes untuk Kontrol Efek Fade */
+@keyframes loopFade {
+    0% {
+        opacity: 0; /* Mulai tidak terlihat */
+    }
+    1.33% {
+        opacity: 0.5; /* Fade in selama 1 detik (1s / 75s = ~1.33%) */
+    }
+    80% {
+        opacity: 0.5; /* Tetap muncul selama 59 detik lagi (Total 60 detik) */
+    }
+    81.33% {
+        opacity: 0; /* Fade out selama 1 detik */
+    }
+    100% {
+        opacity: 0; /* Tetap hilang selama 14 detik sisa (Total 15 detik) */
+    }
 }
 </style>
 
