@@ -36,26 +36,30 @@ body{
     /* Selalu berada di atas */
     z-index:9999;
 
-    /* Terapkan Animasi (Total durasi: 60s + 15s = 75s) */
-    animation: loopFade 75s infinite ease-in-out;
+    /* Total durasi animasi: 30s (muncul) + 5s (hilang) = 35s */
+    animation: loopFade 35s infinite ease-in-out;
 }
 
 /* Keyframes untuk Kontrol Efek Fade */
 @keyframes loopFade {
     0% {
-        opacity: 0; /* Mulai tidak terlihat */
+        opacity: 0; 
     }
-    1.33% {
-        opacity: 0.5; /* Fade in selama 1 detik (1s / 75s = ~1.33%) */
+    1.43% {
+        /* Fade in selama 0.5 detik (0.5s / 35s) */
+        opacity: 0.5; 
     }
-    80% {
-        opacity: 0.5; /* Tetap muncul selama 59 detik lagi (Total 60 detik) */
+    84.29% {
+        /* Tetap muncul sampai detik ke-29.5 (29.5s / 35s) */
+        opacity: 0.5; 
     }
-    81.33% {
-        opacity: 0; /* Fade out selama 1 detik */
+    85.71% {
+        /* Fade out selama 0.5 detik (Selesai tepat di detik ke-30) */
+        opacity: 0; 
     }
     100% {
-        opacity: 0; /* Tetap hilang selama 14 detik sisa (Total 15 detik) */
+        /* Tetap hilang selama 5 detik sisa (Detik ke-30 hingga 35) */
+        opacity: 0; 
     }
 }
 </style>
